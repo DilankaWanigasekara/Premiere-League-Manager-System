@@ -3,13 +3,17 @@ import com.premierleague.backend.models.Date;
 import com.premierleague.backend.models.FootballClub;
 import com.premierleague.backend.models.Match;
 import com.premierleague.backend.operations.Operation;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
-@CrossOrigin(origins = "*", allowedHeaders = "*")
-@org.springframework.web.bind.annotation.RestController
+
+@CrossOrigin("*")
+@SpringBootApplication
+@RestController
 public class Controller {
 
     Operation operation = new Operation();
@@ -29,8 +33,11 @@ public class Controller {
         return operation.getMatches();
     }
 
-    @GetMapping(value = "/getPlayedMatches")
-    public List<Match> getPlayedMatches(@RequestBody Date date){
+    @GetMapping(value = "/getMatches/{d}")
+    public List<Match> getPlayedMatches(@PathVariable String d){
+        String[] parts = d.split("-");
+        System.out.println(Arrays.toString(parts));
+        Date date = new Date(Integer.parseInt(parts[0]), Integer.parseInt(parts[1]), Integer.parseInt(parts[2]));
         return operation.getPlayedMatches(date);
     }
 
