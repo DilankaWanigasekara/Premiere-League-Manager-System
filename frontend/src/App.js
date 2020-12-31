@@ -1,19 +1,26 @@
 import Nav from './nav';
-//import Match from'./match';
-//import Team from './team';
-//import generateMatch from './generateMatch';
-
-//import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
+import Match from'./match';
+import Team from './team';
+import generateMatch from './generateMatch';
+import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
 
 function App(){
     
         
     return(
+      <Router> 
          <div className="App">
         <Nav/>
+          <Switch>
+           
+            <Route path="/match" component= {Match}/>
+            <Route path="/team" component= {Team}/>
+            <Route path="/generateMatch" component= {generateMatch}/>
+          </Switch> 
+          </div> 
+        </Router>  
         
         
-        </div>
         
         
     );
