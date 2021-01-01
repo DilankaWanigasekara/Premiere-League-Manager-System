@@ -196,6 +196,7 @@ public class PremierLeagueManager implements LeagueManager {
 
     @Override //allow user to add a played match in premier league
     public void addPlayedMatch(int team1, int team2, int goalsTeam1, int goalsTeam2, Date playedDate) {
+        int id = clubList.size() + 1;
         int club_01_index = -1;
         int club_02_index = -1;
 
@@ -249,7 +250,7 @@ public class PremierLeagueManager implements LeagueManager {
         clubList.set(club_02_index, club02);
 
         // create match
-        Match match = new Match(club01, club02, goalsTeam1, goalsTeam2, playedDate);
+        Match match = new Match(id,club01, club02, goalsTeam1, goalsTeam2, playedDate);
 
         // add match to list
         matchList.add(match);

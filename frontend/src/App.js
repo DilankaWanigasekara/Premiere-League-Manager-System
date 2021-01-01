@@ -10,13 +10,15 @@ function App(){
     return(
       <Router> 
          <div className="App">
+           <header id ='main'>
         <Nav/>
           <Switch>
            
             <Route path="/match" component= {Match}/>
             <Route path="/team" component= {Team}/>
             <Route path="/generateMatch" component= {generateMatch}/>
-          </Switch> 
+          </Switch>
+          </header> 
           </div> 
         </Router>  
         

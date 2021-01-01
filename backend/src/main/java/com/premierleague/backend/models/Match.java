@@ -4,18 +4,21 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class Match implements Serializable {
+    private int id;
     private FootballClub team_1;
     private FootballClub team_2;
     private int goalsTeam_1;
     private int goalsTeam_2;
     private Date date;
 
+
     public Match(){
         //default constructor
     }
 
     //constructor with arguments
-    public Match(FootballClub team_1,FootballClub team_2,int goalsTeam_1,int goalsTeam_2,Date date){
+    public Match(int id,FootballClub team_1,FootballClub team_2,int goalsTeam_1,int goalsTeam_2,Date date){
+        this.id=id;
         this.team_1=team_1;
         this.team_2=team_2;
         this.goalsTeam_1=goalsTeam_1;
@@ -64,21 +67,25 @@ public class Match implements Serializable {
         this.date = date;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Match match = (Match) o;
-        return goalsTeam_1 == match.goalsTeam_1 &&
-                goalsTeam_2 == match.goalsTeam_2 &&
-                Objects.equals(team_1, match.team_1) &&
-                Objects.equals(team_2, match.team_2) &&
-                Objects.equals(date, match.date);
+        return goalsTeam_1 == match.goalsTeam_1 && goalsTeam_2 == match.goalsTeam_2 && id == match.id && team_1.equals(match.team_1) && team_2.equals(match.team_2) && date.equals(match.date);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(team_1, team_2, goalsTeam_1, goalsTeam_2, date);
+        return Objects.hash(team_1, team_2, goalsTeam_1, goalsTeam_2, date, id);
     }
 
     @Override
@@ -89,8 +96,7 @@ public class Match implements Serializable {
                 ", goalsTeam_1=" + goalsTeam_1 +
                 ", goalsTeam_2=" + goalsTeam_2 +
                 ", date=" + date +
+                ", id=" + id +
                 '}';
     }
-
-
 }
