@@ -119,7 +119,7 @@ public class Operation {
         else {
             throw new IllegalArgumentException("Sorry!! Not enough teams for the process ...");
         }
-        int id = clubList.size() + 1;
+        int id = matchList.size() + 1;
         clubList.set(randomClubIndex01, club1);
         clubList.set(randomClubIndex02, club2);
         Match match=new Match(id, club1,club2,randomGoalsScored01,randomGoalsScored02,date);
