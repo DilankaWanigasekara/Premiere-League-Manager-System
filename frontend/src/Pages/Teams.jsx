@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import  Axios  from "axios";
-import './App.css';
+import '../App.css';
 import {DataGrid} from "@material-ui/data-grid"
 
 const columns = [
@@ -24,7 +24,7 @@ const columns = [
     }
 ]
 
-function Team(){
+function Teams(){
 
     const [teams, setTeams] = useState([]);
 
@@ -51,4 +51,4 @@ function Team(){
     );
 }
 
-export default Team;
+export default Teams;

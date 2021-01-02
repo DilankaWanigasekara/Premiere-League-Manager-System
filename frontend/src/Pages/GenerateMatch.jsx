@@ -1,13 +1,13 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import  Axios  from "axios";
-import './App.css';
+import '../App.css';
 
 function Match(team, goals){
     return(
         <div> 
             {team.winner? 
                 <div>
-                    {team.winner === "draw"?                     
+                    {team.winner == "draw"?                     
                         <div className="matchCard-draw">
                             <h3>{team?.name}</h3>
                             <p><b>Goals Scored:</b> {goals}</p>

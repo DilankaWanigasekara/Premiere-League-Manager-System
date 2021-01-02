@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import  Axios  from "axios";
-import './App.css';
+import '../App.css';
 import {DataGrid} from "@material-ui/data-grid"
 import DatePicker from "react-datepicker";
  
 import "react-datepicker/dist/react-datepicker.css";
 
-function Match(){
+function Matches(){
 
     const columns = [
         { field: 'id', headerName: 'ID', width: 200 },
@@ -103,4 +103,4 @@ function Match(){
     );
 }
 
-export default Match;
+export default Matches;

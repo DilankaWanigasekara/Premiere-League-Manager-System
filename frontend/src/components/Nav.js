@@ -1,31 +1,28 @@
+  
 import React from 'react';
-import './App.css';
+import '../App.css';
 import {Link} from 'react-router-dom';
 
 function Nav() {
-  const Style = {
+  const navStyle = {
       color:'white'
   };
 
   return (
     <nav>
-        <Link style={Style} to='/'>
+        <Link style={navStyle} to='/'>
                 <h3>Premiere League Manager</h3>
         </Link>
         <ul className="nav-links">
-        <Link style={Style} to='/home'>
-                <li>|Home </li>
-            </Link>
-            <Link style={Style} to='/teams'>
+            <Link style={navStyle} to='/teams'>
                 <li>| Teams</li>
             </Link>
-            <Link style={Style} to='/matches'>
+            <Link style={navStyle} to='/matches'>
                 <li>| Matches</li>
             </Link>
-            <Link style={Style} to='/generate-match'>
+            <Link style={navStyle} to='/generate-match'>
                 <li>| Generate Match</li>
             </Link>
-            
         </ul>
     </nav>
   );
