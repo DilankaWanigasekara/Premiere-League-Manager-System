@@ -1,7 +1,8 @@
-import Nav from './nav';
-import Match from'./match';
-import Team from './team';
-import generateMatch from './generateMatch';
+import Nav from './Nav';
+import Match from'./Match';
+import Team from './Team';
+import Home from './Home';
+import generateMatch from './GenerateMatch';
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
 
 function App(){
@@ -13,10 +14,10 @@ function App(){
            <header id ='main'>
         <Nav/>
           <Switch>
-           
-            <Route path="/match" component= {Match}/>
-            <Route path="/team" component= {Team}/>
-            <Route path="/generateMatch" component= {generateMatch}/>
+            <Route path="/Home" component= {Home}/>
+            <Route path="/Match" component= {Match}/>
+            <Route path="/Team" component= {Team}/>
+            <Route path="/GenerateMatch" component= {generateMatch}/>
           </Switch>
           </header> 
           </div> 

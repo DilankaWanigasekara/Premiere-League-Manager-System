@@ -87,10 +87,10 @@ public class Operation {
             System.out.println(club2);
 
 
-            randomGoalsScored01 = randomNumber(30);
+            randomGoalsScored01 = randomNumber(10);
             System.out.println(randomGoalsScored01);
 
-            randomGoalsScored02 = randomNumber(30);
+            randomGoalsScored02 = randomNumber(10);
             System.out.println(randomGoalsScored02);
 
             club1.setNumberOfGoalsScored(club1.getNumberOfGoalsScored() + randomGoalsScored01);
