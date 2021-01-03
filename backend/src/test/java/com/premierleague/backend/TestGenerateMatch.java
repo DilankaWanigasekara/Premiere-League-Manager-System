@@ -24,7 +24,7 @@ import java.util.List;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(value = Controller.class)
-public class TestGetTeams {
+public class TestGenerateMatch {
 
     @Autowired
     private MockMvc mockMvc;
@@ -32,15 +32,13 @@ public class TestGetTeams {
     @MockBean
     private Operation operations;
 
-    List<FootballClub> footballClubs = new ArrayList<>();
+    Match match = new Match();
 
     @Test
-    public void getTeams() throws Exception{
+    public void generateMatch() throws Exception{
+        Mockito.when(operations.generateMatch()).thenReturn(match);
 
-
-        Mockito.when(operations.getTeams()).thenReturn(footballClubs);
-
-        RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/getTeams").accept(MediaType.APPLICATION_JSON);
+        RequestBuilder requestBuilder = MockMvcRequestBuilders.post("/generateMatch").accept(MediaType.APPLICATION_JSON);
 
         MvcResult result = mockMvc.perform(requestBuilder).andReturn();
 
@@ -48,5 +46,6 @@ public class TestGetTeams {
 
         String expected = "200";
         JSONAssert.assertEquals(expected, String.valueOf(result.getResponse().getStatus()), false);
+        JSONAssert.assertEquals("{date:{ }, team_1:{}, team_2:{} }", result.getResponse().getContentAsString(), false);
     }
 }

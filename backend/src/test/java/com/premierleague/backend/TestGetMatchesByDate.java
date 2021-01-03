@@ -24,7 +24,7 @@ import java.util.List;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(value = Controller.class)
-public class TestGetTeams {
+public class TestGetMatchesByDate {
 
     @Autowired
     private MockMvc mockMvc;
@@ -32,19 +32,21 @@ public class TestGetTeams {
     @MockBean
     private Operation operations;
 
-    List<FootballClub> footballClubs = new ArrayList<>();
+    List<Match> matchList = new ArrayList<>();
 
     @Test
-    public void getTeams() throws Exception{
+    public void getMatchesByDate() throws Exception{
 
+        Date date = new Date(10, 11, 2020);
 
-        Mockito.when(operations.getTeams()).thenReturn(footballClubs);
+        Mockito.when(operations.getPlayedMatches(date)).thenReturn(matchList);
 
-        RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/getTeams").accept(MediaType.APPLICATION_JSON);
+        RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/getMatches/" + date.getDay() + "-" + date.getMonth() + "-" + date.getYear()).accept(MediaType.APPLICATION_JSON);
 
         MvcResult result = mockMvc.perform(requestBuilder).andReturn();
 
         System.out.println(result.getResponse());
+        result.getResponse().getStatus();
 
         String expected = "200";
         JSONAssert.assertEquals(expected, String.valueOf(result.getResponse().getStatus()), false);
