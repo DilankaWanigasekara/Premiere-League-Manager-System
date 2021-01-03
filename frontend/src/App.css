@@ -9,7 +9,7 @@
 }
 .home{
   width: 100%;
-  height: 500px;
+  height: 700px;
   background: url('Premier-League-Pick-EPL-Logo-1280x720.jpg');
   background-size: cover;
 }
@@ -30,11 +30,12 @@
   font-size: large;
 }
 .generatematch{
-  background-color: rgb(47, 172, 255);
+  background-color: rgb(116, 193, 245);
 }
 .headings{
   padding: 2%;
   font-size: 28px;
+  
   
 }
 
@@ -76,7 +77,7 @@ nav{
 
  .teams, .matches{
    
-  background-color:rgb(77, 190, 194);
+  background-color:rgb(223, 211, 106);
    height: 100vh;
 }
 
@@ -99,7 +100,7 @@ nav{
 .matchCard-win{
   height: 300px;
   width: 300px;
-  background: rgb(11, 194, 50);
+  background: rgb(94, 243, 57);
   border-radius: 30px;
   display: flex;
   flex-direction: column;
@@ -112,7 +113,7 @@ nav{
 .matchCard-loose{
   height: 300px;
   width: 300px;
-  background: rgb(212, 157, 39);
+  background: rgb(208, 81, 212);
   border-radius: 30px;
   display: flex;
   flex-direction: column;

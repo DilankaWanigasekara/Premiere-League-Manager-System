@@ -67,7 +67,7 @@ export default function GenerateMatch() {
             <h1 className="headings">Match List</h1>
             <div className="headings">
                 <div className="genButton" >
-                    <button onClick={()=>generateMatch()}>Generate match</button> 
+                    <button className="btn btn-success"onClick={()=>generateMatch()}>Generate match</button> 
                 </div>
 
                 <hr />
