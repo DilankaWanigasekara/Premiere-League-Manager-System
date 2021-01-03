@@ -3,8 +3,8 @@ package com.premierleague.backend.console_app;
 import com.premierleague.backend.models.Date;
 import com.premierleague.backend.models.Match;
 
-import javafx.application.Application;
-import javafx.stage.Stage;
+
+
 import sun.java2d.pipe.SpanShapeRenderer;
 
 import java.io.IOException;
@@ -13,7 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 
-public class Main extends Application {
+public class Main  {
     private Scanner sc = new Scanner(System.in);
     private PremierLeagueManager premierLeagueManager = new PremierLeagueManager();
     private Match match=new Match();
@@ -21,9 +21,8 @@ public class Main extends Application {
 
 
 
-    public static void main(String[] args) {launch();}
-    @Override
-    public void start(Stage primaryStage) throws Exception{
+    public static void main(String[] args) {
+
 
         Main main = new Main();
         String equalsLine = "======================================================";
@@ -44,8 +43,7 @@ public class Main extends Application {
                     "4 - Display Premiere League Table\n" +
                     "5 - Add Match\n" +
                     "6 - Open GUI\n" +
-                    "7 - Played matches\n" +
-                    "8 - Save and exit");
+                    "7 - Save and exit");
             System.out.println(minusLine);
             System.out.println("Enter Option: ");
             String userInput= main.sc.nextLine();
@@ -75,9 +73,6 @@ public class Main extends Application {
                     main.premierLeagueManager.openGUI();
                     break;
                 case "7":
-                    //main.premierLeagueManager.GuiMatch();
-                    break;
-                case "8" :
                     main.premierLeagueManager.saveAndExit();
                     break;
                 default:

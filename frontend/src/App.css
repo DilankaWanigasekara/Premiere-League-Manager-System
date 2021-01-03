@@ -5,6 +5,13 @@
   margin: 0;
   padding: 0;
   font-family: 'Lato', sans-serif;
+  
+}
+.home{
+  width: 100%;
+  height: 500px;
+  background: url('Premier-League-Pick-EPL-Logo-1280x720.jpg');
+  background-size: cover;
 }
 
 .home,
@@ -22,9 +29,13 @@
   padding: 2%;
   font-size: large;
 }
-
+.generatematch{
+  background-color: rgb(47, 172, 255);
+}
 .headings{
   padding: 2%;
+  font-size: 28px;
+  
 }
 
 .datepicker{
@@ -46,23 +57,27 @@ nav{
   justify-content: space-around;
   align-items: center;
   list-style: none;
+   
 }
 
 .nav-links li{
   transition-delay: 2ms;
   list-style: none;
   font-size: 30px;
+  
 }
 
 .nav-links li:hover{
   font-weight: bold;
   transition-delay: 3ms;
   list-style: none;
+  
 }
 
-.home, .teams, .matches{
-  /* background-image: linear-gradient(to top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1); */
-  height: 100vh;
+ .teams, .matches{
+   
+  background-color:rgb(77, 190, 194);
+   height: 100vh;
 }
 
 
@@ -84,7 +99,7 @@ nav{
 .matchCard-win{
   height: 300px;
   width: 300px;
-  background: rgb(39, 212, 39);
+  background: rgb(11, 194, 50);
   border-radius: 30px;
   display: flex;
   flex-direction: column;
@@ -97,7 +112,7 @@ nav{
 .matchCard-loose{
   height: 300px;
   width: 300px;
-  background: rgb(212, 39, 39);
+  background: rgb(212, 157, 39);
   border-radius: 30px;
   display: flex;
   flex-direction: column;

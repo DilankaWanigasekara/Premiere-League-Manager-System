@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import  Axios  from "axios";
 import '../App.css';
 
@@ -7,7 +7,7 @@ function Match(team, goals){
         <div> 
             {team.winner? 
                 <div>
-                    {team.winner == "draw"?                     
+                    {team.winner === "draw"?                     
                         <div className="matchCard-draw">
                             <h3>{team?.name}</h3>
                             <p><b>Goals Scored:</b> {goals}</p>
@@ -66,7 +66,7 @@ export default function GenerateMatch() {
         <div className="generatematch">
             <h1 className="headings">Match List</h1>
             <div className="headings">
-                <div className="genButton">
+                <div className="genButton" >
                     <button onClick={()=>generateMatch()}>Generate match</button> 
                 </div>
 

@@ -16,8 +16,8 @@ import java.util.Scanner;
 public class PremierLeagueManager implements LeagueManager {
     private List<FootballClub> clubList = new ArrayList<>();   // this stores all the clubs
     private List<Match> matchList = new ArrayList<>();         // this stores all the matches
-    Scanner sc = new Scanner(System.in);
-    String file = "PremiereLeagueManager.txt";
+    private Scanner sc = new Scanner(System.in);
+    private String file = "PremiereLeagueManager.txt";
 
 
 
@@ -278,23 +278,18 @@ public class PremierLeagueManager implements LeagueManager {
 
     @Override //method to open client page
     public void openGUI() {
-//        try {
-//            Desktop desktop = java.awt.Desktop.getDesktop();
-//            URI oURL = new URI("http://localhost:3000/");
-//            desktop.browse(oURL);
-//        } catch (Exception e) {
-//            System.out.println(e.getMessage()+": Error in loading client page...");
-//        }
-        GuiTable gui=new GuiTable();
-        FxApplication fxApplication=new FxApplication(clubList, matchList);
+        try {
+            Desktop desktop = java.awt.Desktop.getDesktop();
+            URI oURL = new URI("http://localhost:3000/");
+            desktop.browse(oURL);
+        } catch (Exception e) {
+            System.out.println(e.getMessage()+": Error in loading client page...");
+        }
 
-        gui.loadTable(clubList,matchList);
 
-    }
-    public void GuiMatch(){
-        FxApplication fxApplication=new FxApplication(clubList, matchList);
-        fxApplication.loadMatches(matchList);
+
 
     }
+
 }
 

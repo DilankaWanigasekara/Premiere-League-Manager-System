@@ -12,6 +12,7 @@ function App() {
   return (
     <>
     <Router>
+      
       <Nav />
         <Switch>
           <Route path="/" exact component={Home} />
@@ -19,6 +20,7 @@ function App() {
           <Route path="/matches" component={Matches} />
           <Route path="/generate-match" component={GenerateMatch} />
         </Switch>
+        
       </Router>
     </>
   );
