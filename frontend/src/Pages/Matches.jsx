@@ -9,12 +9,12 @@ import "react-datepicker/dist/react-datepicker.css";
 function Matches(){
 
     const columns = [
-        { field: 'id', headerName: 'ID', width: 200 },
-        { field: 'date', headerName: 'Date', width: 200 },
-        { field: 'club1', headerName: 'Club Name', width: 200 },
-        { field: 'goalsTeam_1', headerName: 'Club Goals', width: 200 },
-        { field: 'club2', headerName: 'Club Name', width: 200 },
-        { field: 'goalsTeam_2', headerName: 'Club Goals', width: 200 },
+        { field: 'id', headerName: 'ID', width: 210 },
+        { field: 'date', headerName: 'Date', width: 210 },
+        { field: 'club1', headerName: 'Club Name', width: 210, sortable:false },
+        { field: 'goalsTeam_1', headerName: 'Club Goals', width: 210 },
+        { field: 'club2', headerName: 'Club Name', width: 210, sortable:false },
+        { field: 'goalsTeam_2', headerName: 'Club Goals', width: 210 },
         
       ];   
 

@@ -4,12 +4,12 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Lato', sans-serif;
+  font-family:  'Times New Roman', Times, serif,'Lato', sans-serif;
   
 }
 .home{
-  width: 100%;
-  height: 700px;
+  width: 1500px;
+  height: 40vh;
   background: url('Premier-League-Pick-EPL-Logo-1280x720.jpg');
   background-size: cover;
 }
@@ -18,19 +18,37 @@
 .reports,
 .products {
   display: flex;
-  height: 90vh;
+  height: 130vh;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
 }
-
+.span{
+  position:absolute;
+    top:90%;
+    left:20%;
+    right:53%;
+	  transform:translate(-50%,-50%);
+	  font-size:19px;
+	  
+	  color:#fff;
+    font-family:Courier New;
+    text-shadow:
+          10px 15px 20px #f8f7f7,
+          0px 0px 30px rgb(236, 46, 46);
+	  
+}
 .tabledata{
   height: 80vh;
   padding: 2%;
   font-size: large;
 }
 .generatematch{
-  background-color: rgb(116, 193, 245);
+  /* background-color: rgb(116, 193, 245); */
+  width: 1500px;
+  height: 110vh;
+  background: url('EPL_Logo.jpg');
+  background-size: cover;
 }
 .headings{
   padding: 2%;
@@ -47,9 +65,15 @@ nav{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 10vh;
+  min-height: 12vh;
   background: rgb(73, 79, 82);
   color: white;
+  width:100%;
+  position:fixed;
+  padding-top:auto;
+  padding-left:10px ;
+  padding-right: 30px;
+  
 }
 
 .nav-links{
@@ -58,6 +82,8 @@ nav{
   justify-content: space-around;
   align-items: center;
   list-style: none;
+  padding-top:10px;
+  
    
 }
 
@@ -75,10 +101,15 @@ nav{
   
 }
 
- .teams, .matches{
+  .matches{
    
-  background-color:rgb(223, 211, 106);
+  background-color:rgb(116, 141, 209);
    height: 100vh;
+}
+.teams{
+  background-color:rgb(241, 197, 146);
+   height: 100vh;
+   
 }
 
 
@@ -95,12 +126,13 @@ nav{
 
 .verses{
   font-size: 40px;
+  color: aliceblue;
 }
 
 .matchCard-win{
   height: 300px;
   width: 300px;
-  background: rgb(94, 243, 57);
+  background: rgb(126, 196, 68);
   border-radius: 30px;
   display: flex;
   flex-direction: column;
@@ -108,12 +140,14 @@ nav{
   align-items: center;
   text-align: center;
   padding: 5%;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
 }
 
 .matchCard-loose{
   height: 300px;
   width: 300px;
-  background: rgb(208, 81, 212);
+  background: rgb(77, 152, 187);
   border-radius: 30px;
   display: flex;
   flex-direction: column;
@@ -121,6 +155,7 @@ nav{
   align-items: center;
   text-align: center;
   padding: 5%;
+  font-family:'Times New Roman', Times, serif;
 }
 
 .matchCard-draw{
@@ -134,4 +169,5 @@ nav{
   align-items: center;
   text-align: center;
   padding: 5%;
+  font-family:'Times New Roman', Times, serif;
 }

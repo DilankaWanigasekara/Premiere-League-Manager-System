@@ -11,17 +11,24 @@ const columns = [
         field: 'name', headerName: 'Club Name', width:130, sortable:false
     },
     {
-        field: 'wins', headerName: 'Wins', width: 130, type:'number'
+        field: 'currentPoints', headerName: 'Points', width: 170, type:'number'
     },
     {
-        field: 'defeats', headerName: 'Loses', width: 130, type:'number'
+        field: 'wins', headerName: 'Wins', width: 170, type:'number'
     },
     {
-        field: 'draws', headerName: 'Draws', width: 130, type:'number'
+        field: 'defeats', headerName: 'Loses', width: 170, type:'number',sortable:false
     },
     {
-        field: 'currentPoints', headerName: 'Points', width: 130, type:'number'
-    }
+        field: 'draws', headerName: 'Draws', width: 170, type:'number',sortable:false
+    },
+    
+    {
+        field: 'numberOfGoalsScored', headerName: 'Goals Scored', width: 170, type:'number'
+    },
+    {
+        field: 'numberOfGoalsReceived', headerName: 'Goals Recieved', width: 170, type:'number',sortable:false
+    },
 ]
 
 function Teams(){
