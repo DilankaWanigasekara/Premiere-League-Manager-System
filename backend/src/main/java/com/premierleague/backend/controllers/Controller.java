@@ -24,7 +24,7 @@ public class Controller {
     }
 
     @PostMapping(value = "/generateMatch")
-    public Match generateMatch() throws IOException { // ops, need to mention JSON eke body eken ganne kiyala
+    public Match generateMatch() throws IOException {
         return operation.generateMatch();
     }
 

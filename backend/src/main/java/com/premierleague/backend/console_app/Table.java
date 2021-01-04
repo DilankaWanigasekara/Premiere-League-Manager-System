@@ -5,10 +5,12 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+// Source : https://www.logicbig.com/how-to/code-snippets/jcode-java-cmd-command-line-table.html
+// This creates a table showing all team statistics in the premiere league
 public class Table {
-    private static final String HORIZONTAL_SEP = "-";
-    private String verticalSep;
-    private String joinSep;
+    private static final String HORIZONTAL = "-";
+    private String vertical;
+    private String join;
     private String[] headers;
     private List<String[]> rows = new ArrayList<>();
     private boolean rightAlign;
@@ -22,8 +24,8 @@ public class Table {
     }
 
     public void setShowVerticalLines(boolean showVerticalLines) {
-        verticalSep = showVerticalLines ? "|" : "";
-        joinSep = showVerticalLines ? "+" : " ";
+        vertical = showVerticalLines ? "|" : "";
+        join = showVerticalLines ? "+" : " ";
     }
 
     public void setHeaders(String... headers) {
@@ -66,8 +68,8 @@ public class Table {
     private void printLine(int[] columnWidths) {
         for (int i = 0; i < columnWidths.length; i++) {
             String line = String.join("", Collections.nCopies(columnWidths[i] +
-                    verticalSep.length() + 1, HORIZONTAL_SEP));
-            System.out.print(joinSep + line + (i == columnWidths.length - 1 ? joinSep : ""));
+                    vertical.length() + 1, HORIZONTAL));
+            System.out.print(join + line + (i == columnWidths.length - 1 ? join : ""));
         }
         System.out.println();
     }
@@ -75,11 +77,11 @@ public class Table {
     private void printRow(String[] cells, int[] maxWidths) {
         for (int i = 0; i < cells.length; i++) {
             String s = cells[i];
-            String verStrTemp = i == cells.length - 1 ? verticalSep : "";
+            String verStrTemp = i == cells.length - 1 ? vertical : "";
             if (rightAlign) {
-                System.out.printf("%s %" + maxWidths[i] + "s %s", verticalSep, s, verStrTemp);
+                System.out.printf("%s %" + maxWidths[i] + "s %s", vertical, s, verStrTemp);
             } else {
-                System.out.printf("%s %-" + maxWidths[i] + "s %s", verticalSep, s, verStrTemp);
+                System.out.printf("%s %-" + maxWidths[i] + "s %s", vertical, s, verStrTemp);
             }
         }
         System.out.println();

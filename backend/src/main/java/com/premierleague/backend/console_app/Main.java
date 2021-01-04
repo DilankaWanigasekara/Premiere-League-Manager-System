@@ -3,26 +3,17 @@ package com.premierleague.backend.console_app;
 import com.premierleague.backend.models.Date;
 import com.premierleague.backend.models.Match;
 
+import java.util.Scanner;
 
 
-import sun.java2d.pipe.SpanShapeRenderer;
-
-import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.*;
-
-
-public class Main  {
+public class Main {
     private Scanner sc = new Scanner(System.in);
     private PremierLeagueManager premierLeagueManager = new PremierLeagueManager();
-    private Match match=new Match();
+    private Match match = new Match();
     private Validation validation = new Validation();
 
 
-
     public static void main(String[] args) {
-
 
         Main main = new Main();
         String equalsLine = "======================================================";
@@ -32,8 +23,8 @@ public class Main  {
         System.out.println("         Welcome to Premiere League Manager           ");
         System.out.println(equalsLine);
 
-
-        while(true) { //let the user select the option
+        //let the user select the option
+        while (true) {
             System.out.println(equalsLine);
             System.out.println("                        MENU                          ");
             System.out.println(equalsLine);
@@ -46,9 +37,7 @@ public class Main  {
                     "7 - Save and exit");
             System.out.println(minusLine);
             System.out.println("Enter Option: ");
-            String userInput= main.sc.nextLine();
-
-
+            String userInput = main.sc.nextLine();
 
 
             switch (userInput) {
@@ -83,27 +72,29 @@ public class Main  {
         }
     }
 
-
-
-    public void displayStatistics(){
+    // display statistics of aclub with the provided id
+    public void displayStatistics() {
         System.out.println("Enter Id of the club for check statistics:");
-        int id =sc.nextInt();
+        int id = sc.nextInt();
         premierLeagueManager.displayClubStatistics(id);
     }
 
+    // delete a club by its id
     public void delete() {
         System.out.println("Enter the club Id want to delete");
         int clubId = sc.nextInt();
         premierLeagueManager.deleteClub(clubId);
     }
-    public void addMatch() {  //let the user to add the  played matches to premier league manager
+
+    //let the user to add the  played matches to premier league manager
+    public void addMatch() {
         int teamOne;
         int teamTwo;
         int goalsTeamOne;
         int goalsTeamTwo;
         Date date;
 
-        while(true) {
+        while (true) {
             try {
                 System.out.println("Enter the two teams played in the match");
                 System.out.println("Enter team one Id");
@@ -112,7 +103,7 @@ public class Main  {
                 System.out.println("Enter team two Id");
                 teamTwo = sc.nextInt();
 
-                if (teamOne==teamTwo) {
+                if (teamOne == teamTwo) {
                     System.out.println("Same id detected for both teams!! Please check and re-enter the correct ids!! ");
                     sc.nextLine();
                     return;
@@ -143,11 +134,11 @@ public class Main  {
 
             System.out.println("Enter the date match held in format (dd-mm-yyyy)");
             String dateArr[] = sc.nextLine().split("-");
-            if(Validation.checkDate(dateArr)){
+            if (Validation.checkDate(dateArr)) {
                 date = new Date(Integer.parseInt(dateArr[0]), Integer.parseInt(dateArr[1]), Integer.parseInt(dateArr[2]));
                 premierLeagueManager.addPlayedMatch(teamOne, teamTwo, goalsTeamOne, goalsTeamTwo, date);
                 break;
-            }else {
+            } else {
                 System.out.println("Invalid date format!!!");
             }
 

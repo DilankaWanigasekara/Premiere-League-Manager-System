@@ -1,7 +1,9 @@
 package com.premierleague.backend.console_app;
 
 public class Validation {
-    public static boolean onlyInt (String str) //method to check all are integers in a string
+
+    //method to check all are integers in a string
+    public static boolean onlyInt (String str)
     {
         String regex = "[0-9]+";
         if(str.matches(regex)){
@@ -9,10 +11,10 @@ public class Validation {
         }else{
             return false;
         }
-
-
     }
-    public static boolean onlyString (String str){ //method to check all are characters in a string
+
+    //method to check all are characters in a string
+    public static boolean onlyString (String str){
         for (int i = 0; i < str.length(); i++) {
 
             if (Character.isDigit(str.charAt(i))) {
@@ -22,7 +24,8 @@ public class Validation {
         return true;
     }
 
-    public static boolean checkDate (String[] dateArr){ // validate date
+    // validate date
+    public static boolean checkDate (String[] dateArr){
         if (dateArr.length!=3){
             System.out.println("The entered date is not valid!! Please re-enter in correct format (dd-mm-yyyy)");
             return false;
